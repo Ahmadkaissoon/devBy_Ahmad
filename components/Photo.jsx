@@ -19,11 +19,11 @@ const Photo = () => {
             opacity: 1,
             transition: { delay: 2, duration: 0.4, ease: "easeInOut" },
           }}
-          className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px]
+          className="w-[290px] h-[290px] xl:w-[470px] xl:h-[490px]
         mix-blend-lighten absolute"
         >
           <Image
-            src="/assets/WhatsApp Image 2025-04-12 at 19.46.42_cdbf667e.png"
+            src="/assets/Untitled-2.png"
             priority
             quality={100}
             fill

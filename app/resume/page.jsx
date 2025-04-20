@@ -19,6 +19,9 @@ import {
 } from "@/components/ui/tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import capIcon from "@/assets/assets/resume/cap.svg";
+import badgeIcon from "@/assets/assets/resume/badge.svg";
 
 const about = {
   title: "about me",
@@ -57,7 +60,7 @@ const about = {
 };
 
 const Experiences = {
-  icon: "/assets/resume/badge.svg",
+  icon: badgeIcon,
   title: "My experience",
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
@@ -81,7 +84,7 @@ const Experiences = {
 };
 
 const education = {
-  icon: "/assets/resume/cap.svg",
+  icon: capIcon,
   title: "My education",
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
@@ -162,10 +165,19 @@ const Resume = () => {
             <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="about">About me</TabsTrigger>
           </TabsList>
-          <div className="min-h-[70vh] w-full">
+          <div className="min-h-[70vh] w-full px-4">
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold">{Experiences.title}</h3>
+                <div className="flex flex-row items-center gap-4">
+                  <Image
+                    src={Experiences.icon}
+                    width={30}
+                    height={30}
+                    alt="exp_icon"
+                    className="object-contain"
+                  />
+                  <h3 className="text-4xl font-bold">{Experiences.title}</h3>
+                </div>
                 <p className="max-w-[1000px] text-white/60 mx-auto xl:mx-0">
                   {Experiences.description}
                 </p>
@@ -196,7 +208,16 @@ const Resume = () => {
             </TabsContent>
             <TabsContent value="education" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold">{education.title}</h3>
+                <div className="flex flex-row gap-4">
+                  <Image
+                    src={education.icon}
+                    width={40}
+                    height={40}
+                    alt="edu_icon"
+                    className="object-contain"
+                  />
+                  <h3 className="text-4xl font-bold">{education.title}</h3>
+                </div>
                 <p className="max-w-[1000px] text-white/60 mx-auto xl:mx-0">
                   {education.description}
                 </p>

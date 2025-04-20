@@ -15,6 +15,8 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import WorkSliderBtns from "@/components/WorkSliderBtns";
+import fstWork from "@/assets/assets/work/thumb1.png";
+import sndWork from "@/assets/assets/work/thumb2.png";
 
 const Projects = [
   {
@@ -24,7 +26,7 @@ const Projects = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     stack: [{ name: "HTML 5" }, { name: "Css 3" }, { name: "Javascript" }],
-    image: "/assets/assets/work/thumb1.png",
+    image: fstWork,
     live: "",
     github: "",
   },
@@ -35,7 +37,7 @@ const Projects = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     stack: [{ name: "HTML 5" }, { name: "Css 3" }, { name: "Javascript" }],
-    image: "/assets/assets/work/thumb2.png",
+    image: sndWork,
     live: "",
     github: "",
   },
@@ -55,15 +57,15 @@ const Work = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="min-h-[80vh] flex flex-col justify-center py-6 mt-2 xl:px-0 overflow-hidden"
+      className="min-h-[80vh] flex flex-col justify-center py-6 px-4 mt-2 xl:px-0 overflow-hidden"
     >
       <div className="container mx-auto overflow-hidden">
-        <div className="flex flex-col xl:flex-row xl:gap-[30px] overflow-hidden">
+        <div className="flex flex-col xl:flex-row xl:gap-[30px] w-full overflow-hidden">
           <div
-            className="w-full xl:w-[50%] xl:h-[460px] 
-          flex flex-col xl:justify-between order-2 xl:order-none "
+            className=" xl:h-[460px] 
+          flex flex-col xl:justify-between order-2 xl:w-[50%] xl:order-none  "
           >
-            <div className="flex flex-col gap-[30px] h-[50%]">
+            <div className="flex flex-col  gap-[30px] h-[50%] ">
               <div
                 className="text-8xl leading-none font-extrabold
               text-transparent text-outline"
@@ -122,7 +124,7 @@ const Work = () => {
               </div>
             </div>
           </div>
-          <div className="w-full xl:w-[50%] overflow-hidden">
+          <div className="xl:w-[50%] overflow-hidden">
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
@@ -135,15 +137,15 @@ const Work = () => {
                   <SwiperSlide key={index}>
                     <div
                       className="h-[460px] relative group flex justify-center
-                    items-center bg-pink-50/20"
+                    items-center bg-primary"
                     >
-                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
+                      <div className="absolute top-0 bottom-0 w-full h-full z-10"></div>
                       <div className="relative w-full h-full">
                         <Image
                           alt="project"
                           src={item.image}
                           fill
-                          className="object-contain"
+                          className="object-contain w-full"
                         />
                       </div>
                     </div>
