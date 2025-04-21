@@ -16,7 +16,7 @@ const Home = () => {
           <div className="text-center xl:text-left order-2 xl:order-none">
             <span className="text-xl">Software Developer</span>
             <h1 className="h1 mb-6">
-              Hello I'm <br />{" "}
+              Hello I'm <br />
               <span className="text-accent">Ahmad Kaissoon</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
@@ -27,10 +27,16 @@ const Home = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="uppercase flex items-center  gap-2 "
+                className="uppercase flex items-center gap-2"
+                asChild
               >
-                <span>Download cv</span>
-                <FiDownload className="text-xl" />
+                <a
+                  href="/docs/Ahmad_Kaissoon_CV_2025.pdf"
+                  download="Ahmad_Kaissoon_CV.pdf"
+                >
+                  <span>Download CV</span>
+                  <FiDownload className="text-xl" />
+                </a>
               </Button>
               <div className="mb-8 xl:mb-0 ">
                 <Socials
