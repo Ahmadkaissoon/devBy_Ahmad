@@ -24,25 +24,28 @@ import { Toaster, toast } from "sonner";
 const formSchema = z.object({
   firstname: z
     .string()
-    .min(2, { message: "First name must be at least 2 characters" })
-    .max(50, { message: "First name must be less than 50 characters" })
-    .regex(/^[a-zA-Z]+$/, { message: "First name can only contain letters" }),
+    .min(2, { message: "First name must be at least 2 characters !" })
+    .max(50, { message: "First name must be less than 50 characters !" })
+    .regex(/^[a-zA-Z]+$/, { message: "First name can only contain letters !" }),
   lastname: z
     .string()
-    .min(2, { message: "Last name must be at least 2 characters" })
-    .max(50, { message: "Last name must be less than 50 characters" })
-    .regex(/^[a-zA-Z]+$/, { message: "Last name can only contain letters" }),
-  email: z.string().email({ message: "Please enter a valid email address" }),
+    .min(2, { message: "Last name must be at least 2 characters !" })
+    .max(50, { message: "Last name must be less than 50 characters !" })
+    .regex(/^[a-zA-Z]+$/, { message: "Last name can only contain letters !" }),
+  email: z.string().email({ message: "Please enter a valid email address !" }),
   number: z
     .string()
-    .regex(/^\+?[0-9\s\-]+$/, { message: "Please enter a valid phone number" }),
+    .regex(/^\+?[0-9\s\-]+$/, {
+      message: "Please enter a valid phone number !",
+    }),
   service: z.string({
-    required_error: "Please select a service",
+    required_error: "Please select a service !",
+    invalid_type_error: "Please Select a service !",
   }),
   message: z
     .string()
-    .min(10, { message: "Message must be at least 10 characters" })
-    .max(500, { message: "Message must be less than 500 characters" }),
+    .min(10, { message: "Message must be at least 10 characters !" })
+    .max(500, { message: "Message must be less than 500 characters !" }),
 });
 
 const info = [
