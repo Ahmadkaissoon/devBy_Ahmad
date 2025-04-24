@@ -78,7 +78,7 @@ const Experiences = {
       link: "/docs/Coursera_Start_the_UX_Design_Process.pdf",
     },
     {
-      company: "HOMS Uni",
+      company: "Homs Uni",
       position: "Eighth place in The 2023 ICPC HOMS University Contest",
       duration: "2023",
       link: "/docs/2024-ICPCHOMSUC-ahmad kaissoon-PLACE.pdf",
