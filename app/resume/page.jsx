@@ -26,7 +26,7 @@ import badgeIcon from "@/assets/assets/resume/badge.svg";
 const about = {
   title: "about me",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+    "My journey began with a curiosity for how things work—now I craft the ‘how’ for others. Technology is my medium; impact is my goal.",
   info: [
     {
       fieldName: "Name",
@@ -63,22 +63,43 @@ const Experiences = {
   icon: badgeIcon,
   title: "My experience",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+    "From Hello World to scalable systems, my career has been a cycle of curiosity → code → iteration. Here’s where I’ve been—and where I’m headed next.",
   items: [
+    {
+      company: "Google",
+      position: "Foundations of User Experience (UX) Design",
+      duration: "2023",
+      link: "/docs/Coursera_Foundations_of_User_Experience_(UX) Design.pdf",
+    },
+    {
+      company: "Google",
+      position: "Start the UX Design Process",
+      duration: "2023",
+      link: "/docs/Coursera_Start_the_UX_Design_Process.pdf",
+    },
+    {
+      company: "HOMS Uni",
+      position: "Eighth place in The 2023 ICPC HOMS University Contest",
+      duration: "2023",
+      link: "/docs/2024-ICPCHOMSUC-ahmad kaissoon-PLACE.pdf",
+    },
     {
       company: "MicroTech",
       position: "Front-End Developer",
       duration: "2024 - 2025",
+      link: false,
     },
     {
       company: "MicroTech",
       position: "UX/UI",
       duration: "2024 - 2025",
+      link: false,
     },
     {
-      company: "Freelacncer",
+      company: "Freelancer",
       position: "Front-End Developer",
       duration: "2025 - present",
+      link: false,
     },
   ],
 };
@@ -87,7 +108,7 @@ const education = {
   icon: capIcon,
   title: "My education",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+    "My education laid the foundation, but my curiosity wrote the code. From formal degrees to late-night tutorials, every lesson has sharpened my problem-solving skills and deepened my love for technology. Here’s a snapshot of the knowledge that fuels my craft—both inside and outside the classroom.",
   items: [
     {
       istitution: "Homs Uni",
@@ -100,7 +121,7 @@ const education = {
 const skills = {
   title: "My skills",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+    "Languages, frameworks, and tools are my brushes—the code is my canvas. I wield them to build fast, efficient, and elegant solutions. Below is a snapshot of my technical arsenal, constantly evolving as I learn, break, and refine.",
   skillList: [
     {
       icon: <FaHtml5 />,
@@ -181,24 +202,50 @@ const Resume = () => {
                 <p className="max-w-[1000px] text-white/60 mx-auto xl:mx-0">
                   {Experiences.description}
                 </p>
-                <ScrollArea className="h-[300px]">
+                <ScrollArea className="h-[350px]">
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                     {Experiences.items.map((item, index) => {
-                      return (
+                      return item.link ? (
+                        <a
+                          href={item.link}
+                          target="_blank"
+                          rel="the_certificate"
+                        >
+                          <li
+                            key={index}
+                            className="bg-[#232329] h-[195px] py-6
+                      px-10 rounded-xl flex flex-col justify-center items-center lg:items-start
+                      gap-1 hover:text-accent duration-500"
+                          >
+                            <span className="text-accent">{item.duration}</span>
+                            <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                              {item.position}
+                            </h3>
+                            {item?.company ? (
+                              <div className="flex items-center gap-3">
+                                <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                                <p className="text-white/60">{item.company}</p>
+                              </div>
+                            ) : null}
+                          </li>
+                        </a>
+                      ) : (
                         <li
                           key={index}
-                          className="bg-[#232329] h-[184px] py-6
-                      px-10 rounded-xl flex flex-col justify-center items-center lg:items-start
-                      gap-1"
+                          className="bg-[#232329] h-[195px] py-6
+                  px-10 rounded-xl flex flex-col justify-center items-center lg:items-start
+                  gap-1"
                         >
                           <span className="text-accent">{item.duration}</span>
                           <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
                             {item.position}
                           </h3>
-                          <div className="flex items-center gap-3">
-                            <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                            <p className="text-white/60">{item.company}</p>
-                          </div>
+                          {item?.company ? (
+                            <div className="flex items-center gap-3">
+                              <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                              <p className="text-white/60">{item.company}</p>
+                            </div>
+                          ) : null}
                         </li>
                       );
                     })}

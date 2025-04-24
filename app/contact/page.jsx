@@ -33,11 +33,9 @@ const formSchema = z.object({
     .max(50, { message: "Last name must be less than 50 characters !" })
     .regex(/^[a-zA-Z]+$/, { message: "Last name can only contain letters !" }),
   email: z.string().email({ message: "Please enter a valid email address !" }),
-  number: z
-    .string()
-    .regex(/^\+?[0-9\s\-]+$/, {
-      message: "Please enter a valid phone number !",
-    }),
+  number: z.string().regex(/^\+?[0-9\s\-]+$/, {
+    message: "Please enter a valid phone number !",
+  }),
   service: z.string({
     required_error: "Please select a service !",
     invalid_type_error: "Please Select a service !",
@@ -147,7 +145,8 @@ const contact = () => {
             >
               <h3 className="text-4xl text-accent">Let's work together</h3>
               <p className="text-white/60">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                You can book a service or build your project with me now by
+                sending an email
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
