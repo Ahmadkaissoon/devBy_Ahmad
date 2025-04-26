@@ -19,28 +19,27 @@ import fstWork from "@/assets/assets/work/thumb1.png";
 import sndWork from "@/assets/assets/work/thumb2.png";
 
 const Projects = [
-  {
-    num: "01",
-    category: "frontend",
-    title: "project 1",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-    stack: [{ name: "HTML 5" }, { name: "Css 3" }, { name: "Javascript" }],
-    image: fstWork,
-    live: "",
-    github: "",
-  },
-  {
-    num: "02",
-    category: "frontend",
-    title: "project 2",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-    stack: [{ name: "HTML 5" }, { name: "Css 3" }, { name: "Javascript" }],
-    image: sndWork,
-    live: "",
-    github: "",
-  },
+  // {
+  //   num: "",
+  //   category: "",
+  //   title: "",
+  //   description: "",
+  //   stack: [{ name: "" }, { name: "" }, { name: "" }],
+  //   image: "",
+  //   live: "",
+  //   github: "",
+  // },
+  // {
+  //   num: "02",
+  //   category: "frontend",
+  //   title: "project 2",
+  //   description:
+  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+  //   stack: [{ name: "HTML 5" }, { name: "Css 3" }, { name: "Javascript" }],
+  //   image: sndWork,
+  //   live: "",
+  //   github: "",
+  // },
 ];
 
 const Work = () => {
@@ -50,7 +49,7 @@ const Work = () => {
     const currentIndex = swiper.activeIndex;
     setProject(Projects[currentIndex]);
   };
-  return (
+  return Projects.length > 0 ? (
     <motion.section
       initial={{ opacity: 0 }}
       animate={{
@@ -70,28 +69,28 @@ const Work = () => {
                 className="text-8xl leading-none font-extrabold
               text-transparent text-outline"
               >
-                {project.num}
+                {project?.num}
               </div>
               <h2
                 className="text-[42px] font-bold leading-none text-white
               group-hover:text-accent transition-all duration-500 capitalize"
               >
-                {project.category} project
+                {project?.category} project
               </h2>
-              <p className="text-white/60">{project.description}</p>
+              <p className="text-white/60">{project?.description}</p>
               <ul className="flex gap-4">
-                {project.stack.map((item, index) => {
+                {project?.stack.map((item, index) => {
                   return (
                     <li key={index} className="text-xl text-accent">
-                      {item.name}
-                      {index !== project.stack.length - 1 && ","}
+                      {item?.name}
+                      {index !== project?.stack.length - 1 && ","}
                     </li>
                   );
                 })}
               </ul>
               <div className="border border-white/20"></div>
               <div className="flex items-center gap-4">
-                <Link href={project.live}>
+                <Link href={project?.live}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger
@@ -106,7 +105,7 @@ const Work = () => {
                     </Tooltip>
                   </TooltipProvider>
                 </Link>
-                <Link href={project.github}>
+                <Link href={project?.github}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger
@@ -131,7 +130,7 @@ const Work = () => {
               className="xl:h-[520px] mb-12"
               onSlideChange={handleSlideChange}
             >
-              {Projects.map((item, index) => {
+              {Projects?.map((item, index) => {
                 console.log(item);
                 return (
                   <SwiperSlide key={index}>
@@ -143,7 +142,7 @@ const Work = () => {
                       <div className="relative w-full h-full">
                         <Image
                           alt="project"
-                          src={item.image}
+                          src={item?.image}
                           fill
                           className="object-contain w-full"
                         />
@@ -161,7 +160,7 @@ const Work = () => {
         </div>
       </div>
     </motion.section>
-  );
+  ) : null;
 };
 
 export default Work;
