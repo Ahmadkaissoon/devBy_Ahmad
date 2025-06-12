@@ -15,28 +15,48 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import WorkSliderBtns from "@/components/WorkSliderBtns";
+import microTech_Banner from "@/assets/assets/work/microtech/microTech_Banner.png";
 import fstWork from "@/assets/assets/work/thumb1.png";
 import sndWork from "@/assets/assets/work/thumb2.png";
 
 const Projects = [
-  // {
-  //   num: "",
-  //   category: "",
-  //   title: "",
-  //   description: "",
-  //   stack: [{ name: "" }, { name: "" }, { name: "" }],
-  //   image: "",
-  //   live: "",
-  //   github: "",
-  // },
+  {
+    num: "01",
+    category: "Portfolio",
+    title: "MicroTech co",
+    description:
+      "Website that you can use to build your custom website!, with variant components and customizable navbar, footer, and SEO.",
+    stack: [
+      { name: "Figma" },
+      { name: "NextJs" },
+      { name: "ReactJs" },
+      { name: "Html" },
+      { name: "Css" },
+      { name: "Tailwind" },
+      { name: "Javascript" },
+      { name: "PHP" },
+      { name: "Laravel" },
+    ],
+    image: microTech_Banner,
+    live: "https://tech-solutions-site.netlify.app/",
+    github: "",
+  },
   // {
   //   num: "02",
-  //   category: "frontend",
-  //   title: "project 2",
+  //   category: "Accounting",
+  //   title: "Industrial Accounting website",
   //   description:
-  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-  //   stack: [{ name: "HTML 5" }, { name: "Css 3" }, { name: "Javascript" }],
-  //   image: sndWork,
+  //     " Industrial Accounting website. It contains all sections related to industrial accounting, including invoices, receipts, reports, etc..., in addition to other administrative and communication sections such as permissions, chat, email, and many other sections.",
+  //   stack: [
+  //     { name: "ReactJs" },
+  //     { name: "Html" },
+  //     { name: "Css" },
+  //     { name: "Tailwind" },
+  //     { name: "Javascript" },
+  //     { name: "PHP" },
+  //     { name: "Laravel" },
+  //   ],
+  //   image: "",
   //   live: "",
   //   github: "",
   // },
@@ -77,8 +97,14 @@ const Work = () => {
               >
                 {project?.category} project
               </h2>
+              <h2
+                className="text-[24px] font-semibold leading-none text-accent
+              group-hover:text-accent transition-all duration-500 capitalize"
+              >
+                {project?.title}
+              </h2>
               <p className="text-white/60">{project?.description}</p>
-              <ul className="flex gap-4">
+              <ul className="flex flex-wrap gap-4">
                 {project?.stack.map((item, index) => {
                   return (
                     <li key={index} className="text-xl text-accent">
@@ -90,36 +116,44 @@ const Work = () => {
               </ul>
               <div className="border border-white/20"></div>
               <div className="flex items-center gap-4">
-                <Link href={project?.live}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger
-                        className="w-[70px] h-[70px] rounded-full
+                {project?.live != null &&
+                project?.live != undefined &&
+                project?.live != "" ? (
+                  <Link href={project?.live} target="_blank">
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger
+                          className="w-[70px] h-[70px] rounded-full
                       bg-white/5 cursor-pointer flex justify-center items-center group"
-                      >
-                        <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>live project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
-                <Link href={project?.github}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger
-                        className="w-[70px] h-[70px] rounded-full
+                        >
+                          <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>live project</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                ) : null}
+                {project?.github != null &&
+                project?.github != undefined &&
+                project?.github != "" ? (
+                  <Link href={project?.github}>
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger
+                          className="w-[70px] h-[70px] rounded-full
                       bg-white/5 cursor-pointer flex justify-center items-center group"
-                      >
-                        <BsGithub className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>github project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+                        >
+                          <BsGithub className="text-white text-3xl group-hover:text-accent" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>github project</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                ) : null}
               </div>
             </div>
           </div>
