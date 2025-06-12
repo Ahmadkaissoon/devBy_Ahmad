@@ -207,6 +207,7 @@ const Resume = () => {
                     {Experiences.items.map((item, index) => {
                       return item.link ? (
                         <a
+                          key={index}
                           href={item.link}
                           target="_blank"
                           rel="the_certificate"
