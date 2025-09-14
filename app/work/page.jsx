@@ -17,6 +17,7 @@ import Link from "next/link";
 import WorkSliderBtns from "@/components/WorkSliderBtns";
 import microTech_Banner from "@/assets/assets/work/microtech/microTech_Banner.png";
 import accounting1 from "@/assets/assets/work/accounting/accounting1.jpg";
+import home_page from "@/assets/assets/work/nrep/home-page.png";
 // import accounting2 from "@/assets/assets/work/accounting/accounting2.jpg";
 // import accounting3 from "@/assets/assets/work/accounting/accounting3.jpg";
 // import accounting4 from "@/assets/assets/work/accounting/accounting4.jpg";
@@ -64,6 +65,28 @@ const Projects = [
       { name: "Laravel" },
     ],
     image: accounting1,
+    live: "",
+    github: "",
+  },
+  {
+    num: "03",
+    category: "Service product",
+    title: "national real estat platform",
+    description:
+      "A government project aimed at regulating the issue of real estate sales, rents, and purchases in the city, linked to the governorate municipality, and targeting all real estate traders.",
+    stack: [
+      { name: "Jira" },
+      { name: "Figma" },
+      { name: "ReactJs" },
+      { name: "TypeScript" },
+      { name: "Html" },
+      { name: "Css" },
+      { name: "Tailwind" },
+      { name: "Javascript" },
+      { name: "python" },
+      { name: "django" },
+    ],
+    image: home_page,
     live: "",
     github: "",
   },
