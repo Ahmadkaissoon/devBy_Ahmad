@@ -101,6 +101,12 @@ const Experiences = {
       duration: "2025 - present",
       link: false,
     },
+    {
+      company: "Government work",
+      position: "team manager - UI/UX",
+      duration: "2025 - present",
+      link: false,
+    },
   ],
 };
 

@@ -16,6 +16,15 @@ import Image from "next/image";
 import Link from "next/link";
 import WorkSliderBtns from "@/components/WorkSliderBtns";
 import microTech_Banner from "@/assets/assets/work/microtech/microTech_Banner.png";
+import accounting1 from "@/assets/assets/work/accounting/accounting1.jpg";
+// import accounting2 from "@/assets/assets/work/accounting/accounting2.jpg";
+// import accounting3 from "@/assets/assets/work/accounting/accounting3.jpg";
+// import accounting4 from "@/assets/assets/work/accounting/accounting4.jpg";
+// import accounting5 from "@/assets/assets/work/accounting/accounting5.jpg";
+// import accounting6 from "@/assets/assets/work/accounting/accounting6.jpg";
+// import accounting7 from "@/assets/assets/work/accounting/accounting7.jpg";
+// import accounting8 from "@/assets/assets/work/accounting/accounting8.jpg";
+// import accounting9 from "@/assets/assets/work/accounting/accounting9.jpg";
 
 const Projects = [
   {
@@ -37,6 +46,25 @@ const Projects = [
     ],
     image: microTech_Banner,
     live: "https://tech-solutions-site.netlify.app/",
+    github: "",
+  },
+  {
+    num: "02",
+    category: "Service product",
+    title: "A product of MicroTech co",
+    description:
+      "A product related to accounting and financial management matters for large factories, taking into account speed and quality of data, in addition to simplicity in dealing and completing tasks, whether at the level of invoices, commercial bonds, or reports.",
+    stack: [
+      { name: "ReactJs" },
+      { name: "Html" },
+      { name: "Css" },
+      { name: "Tailwind" },
+      { name: "Javascript" },
+      { name: "PHP" },
+      { name: "Laravel" },
+    ],
+    image: accounting1,
+    live: "",
     github: "",
   },
 ];
